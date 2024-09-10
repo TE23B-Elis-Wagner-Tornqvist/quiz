@@ -2,112 +2,84 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-int score = 0;
-bool isAnswerCorrect = false;
-bool isAnswerCorrect2 = false;
-bool isAnswerCorrect3 = false;   
-bool isAnswerCorrect4 = false;
-bool isAnswerCorrect5 = false;
-bool isAnswerCorrect6 = false;
-bool isAnswerCorrect7 = false;
-bool isAnswerCorrect8 = false;
-bool isAnswercorrect9 = false;
+void rätt(ref int score) {
+    score++;
+    Console.WriteLine("Rätt svar!");
+    Console.WriteLine($"Du har {score} poäng");                      //en funktion så att jag slipper skriva samma kod om och omg igen. funktion om man svarar rätt
+    Console.WriteLine("tryck enter för att fortsätta");         
+    Console.ReadLine();
+}
 
+void fel(ref int score) {
 
-string rätt = 
+score--;
+ Console.WriteLine("Fel svar!");
+ Console.WriteLine($"Du har {score} poäng");                  //säger hur många poäng du har
+    Console.WriteLine("tryck på enter för att fortsätta");         //också en funktion fast för om man svarar fel
+    Console.ReadLine();
 
+}
 
-while(true) {
+int score = 0; //poängen börjar på 0
+
+while(true) {     // så att koden loopas
 
 Console.WriteLine("Hej spelare! Välkommen till en frågesport!");
-
-
-
+Console.WriteLine("Du kommer att få 10 frågor och för varje rätt svar får du 1 poäng och för varje fel svar förlorar du 1 poäng");
+Console.WriteLine("Lycka till!");
+Console.WriteLine("tryck enter för att starta spelet");
+Console.ReadLine();
 Console.Clear();
-
-Console.WriteLine($"poäng: {score}");
-
-
-
+Console.WriteLine($"poäng: {score}");         //skriver ut poängen högst upp
 Console.WriteLine("Vad heter huvudstaden i Autralien?");
 
 
 
-Console.WriteLine("");
+
+
+Console.WriteLine("");        //space mellan fråga och alternativen
 
 Console.WriteLine(" a. melbourne");
-Console.WriteLine(" b. sydney");
-Console.WriteLine(" c. canberra");
+Console.WriteLine(" b. sydney"); 
+Console.WriteLine(" c. canberra");       //alternativen
 Console.WriteLine(" d. Brisbane");
 
-string answer = Console.ReadLine();
+string answer = Console.ReadLine() ?? string.Empty;
 
-if(answer.ToLower() == "c") {
+if(answer.ToLower() == "c") {       //ifall ma nskriver in c så är svaret rätt och min bool blir sann
 
-    isAnswerCorrect = true;
+     //om boolen är sann så körs funktionen rätt
 
-}
-
-if(isAnswerCorrect) {
-
-    score++;
-    Console.WriteLine("Rätt svar!");
-    Console.WriteLine($"Du har {score} poäng");
-     Console.WriteLine("tryck på enter för att fortsätta");
-     
-    Console.ReadLine();
+  rätt(ref score);  // här skriver den allt som är i funktionen rätt
 
      
     
 
-} else if(answer.ToLower() == "a" || answer.ToLower() == "b" || answer.ToLower() == "d") {
+} else if(answer.ToLower() == "a" || answer.ToLower() == "b" || answer.ToLower() == "d") { //ifall man skriver in a,b eller d så är svaret fel och boolen blir falsk
+  // om boolen är falsk så körs funktionen fel
 
-    isAnswerCorrect = false;
-
-} if(isAnswerCorrect == false) {
-
-    Console.WriteLine("Fel svar!");
-    Console.WriteLine("tryck på enter för att fortsätta");
-    Console.ReadLine();
-   // score--;
+    fel(ref score);      //skriver/gör allt som är i funktionen fel
 }
 
-Console.Clear();
-Console.WriteLine($"poäng: {score}");
+Console.Clear();                              // clear console från förra frågan
+Console.WriteLine($"poäng: {score}");    // skirver om poängen högst upp
 
 Console.WriteLine("Vad heter huvudstaden i USA?");
 Console.WriteLine("");
-Console.WriteLine(" a. New York");
+Console.WriteLine(" a. New York");                   //samma som förra frågan
 Console.WriteLine(" b. Washington D.C");
 Console.WriteLine(" c. Los Angeles");
 Console.WriteLine(" d. san francisco");
 
-answer = Console.ReadLine();
+answer = Console.ReadLine() ?? string.Empty;
 
 if(answer.ToLower() == "b") {
-
-    isAnswerCorrect2 = true;
-
-} if(isAnswerCorrect2) {
-    score++;
-    Console.WriteLine("Rätt svar!");
-    Console.WriteLine($"Du har {score} poäng");
-    Console.WriteLine("tryck på enter för att fortsätta");
-    Console.ReadLine();
     
+    rätt(ref score);                                   // allt detta är samma som förra frågan
 
 } else if(answer.ToLower() == "a" || answer.ToLower() == "c" || answer.ToLower() == "d") {
 
-    isAnswerCorrect2 = false;
-
-} if(isAnswerCorrect2 == false) {
-
-    Console.WriteLine("Fel svar!");
-    Console.WriteLine("tryck på enter för att fortsätta");
-    Console.ReadLine();
-    
-    
-   // score--;
+    fel(ref score);
 
 }
 
@@ -118,34 +90,19 @@ Console.WriteLine("Vad heter det högsta berget i världen?");
 Console.WriteLine("");
 
 Console.WriteLine(" a. Kebnekaise");
-Console.WriteLine(" b. Manaslu");
+Console.WriteLine(" b. Manaslu");            //samma som förra frågan
 Console.WriteLine(" c. K2");
 Console.WriteLine(" d. Mount Everest");
 
-answer = Console.ReadLine();
+answer = Console.ReadLine() ?? string.Empty;
 
 if(answer.ToLower() == "d") {
-       isAnswerCorrect3 = true; 
-    } if(isAnswerCorrect3 == true) {
-         score++;
-        Console.WriteLine("Rätt svar!");
-        Console.WriteLine($"Du har {score} poäng");
-        Console.WriteLine("tryck på enter för att fortsätta");
-        Console.ReadLine();
-
         
+        rätt(ref score);
 
 } else if(answer.ToLower() == "a" || answer.ToLower() == "b" || answer.ToLower() == "c") {
 
-    isAnswerCorrect3 = false;
-
-} if(isAnswerCorrect3 == false) {
-
-    Console.WriteLine("Fel svar!");
-    Console.WriteLine("tryck på enter för att fortsätta");
-    Console.ReadLine();
-    //score--;
-
+    fel(ref score);
 
 
 }
@@ -155,35 +112,18 @@ Console.WriteLine($"poäng: {score}");
 Console.WriteLine("I vilken kontinent är världens största öken?");
 Console.WriteLine("");
 Console.WriteLine(" a. europa");
-Console.WriteLine(" b. afrika");
+Console.WriteLine(" b. afrika");                 //samma
 Console.WriteLine(" c. antarktis");
 Console.WriteLine(" d. asien");
 
-answer = Console.ReadLine();
+answer = Console.ReadLine() ?? string.Empty;
 
 if(answer.ToLower() == "c") {
+rätt(ref score);
 
-isAnswerCorrect4 = true;
+} else if(answer.ToLower() == "a" || answer.ToLower() == "b" || answer.ToLower() == "d") {{
 
-} if(isAnswerCorrect4 == true) {
-score++;
-Console.WriteLine("Rätt svar!");
-Console.WriteLine($"Du har {score} poäng");
-Console.WriteLine("tryck på enter för att fortsätta");
-Console.ReadLine();
-
-
-
-} else if(answer.ToLower() == "a" || answer.ToLower() == "b" || answer.ToLower() == "d") {
-
-    isAnswerCorrect4 = false;
-
-} if(isAnswerCorrect4 == false) {
-
-
-Console.WriteLine("fel svar!");
-Console.WriteLine("tryck på enter för att fortsätta");
-Console.ReadLine();
+    fel(ref score);
 
 }
 
@@ -194,31 +134,18 @@ Console.WriteLine("Vilket land har mest öar i världen?");
 Console.WriteLine("");
 
 Console.WriteLine(" a. Sverige");
-Console.WriteLine(" b. Norge");
+Console.WriteLine(" b. Norge");               //samma
 Console.WriteLine(" c. Indonesien");
 Console.WriteLine(" d. Australien");
 
-answer = Console.ReadLine();
+answer = Console.ReadLine() ?? string.Empty;
 
 if(answer == "a") {
-isAnswerCorrect5 = true;
-
-} if(isAnswerCorrect5 == true) {
-score++;
-Console.WriteLine("Rätt svar!");
-Console.WriteLine($"Du har {score} poäng");
-Console.WriteLine("tryck på enter för att fortsätta");
-Console.ReadLine();
+rätt(ref score);
 
 } else if(answer.ToLower() == "b" || answer.ToLower() == "c" || answer.ToLower() == "d") {
 
-    isAnswerCorrect5 = false;
-
-} if(isAnswerCorrect5 == false) {
-
-Console.WriteLine("fel svar!");
-Console.WriteLine("tryck på enter för att fortsätta");
-Console.ReadLine();
+    fel(ref score);
 
 }
 
@@ -230,31 +157,20 @@ Console.WriteLine("Hur många grannländer har Tyskland?");
 Console.WriteLine("");
 
 Console.WriteLine(" a. 9");
-Console.WriteLine(" b. 6");
+Console.WriteLine(" b. 6");   //samma
 Console.WriteLine(" c. 10");
 Console.WriteLine(" d. 4");
 
-answer = Console.ReadLine();
+answer = Console.ReadLine() ?? string.Empty;
 
 if(answer == "a") {
 
-isAnswerCorrect6 = true;
 
-} if(isAnswerCorrect6 == true) {
-score++;
-Console.WriteLine("Rätt svar!");
-Console.WriteLine($"Du har {score} poäng");
-Console.WriteLine("tryck på enter för att fortsätta");
-Console.ReadLine();
+rätt(ref score);
 
 } else if (answer.ToLower() == "b" || answer.ToLower() == "c" || answer.ToLower() == "d") {
 
-    isAnswerCorrect6 = false;
-
-} if(isAnswerCorrect6 == false) {
- Console.WriteLine("fel svar!");
-    Console.WriteLine("tryck på enter för att fortsätta");
-Console.ReadLine();
+ fel(ref score);
 
 }
 
@@ -265,33 +181,21 @@ Console.WriteLine("Vad heter floden som rinner igenom paris?");
 
 Console.WriteLine("");
 
-Console.WriteLine(" a. Fiene");
+Console.WriteLine(" a. Fiene");      //samma
 Console.WriteLine(" b. Seine");
 Console.WriteLine(" c. Donau");
 Console.WriteLine(" d. jacksón");
 
-answer = Console.ReadLine();
+answer = Console.ReadLine() ?? string.Empty;
 
 if(answer == "b") {
 
-isAnswerCorrect7 = true;
-
-} if(isAnswerCorrect7 == true) {
-
-score++;
-Console.WriteLine("Rätt svar!");
-Console.WriteLine($"Du har {score} poäng");
-Console.WriteLine("tryck på enter för att fortsätta");
-Console.ReadLine();
+rätt(ref score);
 
 } else if(answer.ToLower() == "b" || answer.ToLower() == "c" || answer.ToLower() == "d") {
 
-    isAnswerCorrect7 = false;
-
-} if(isAnswerCorrect7 == false) {
-Console.WriteLine("fel svar!");
-Console.WriteLine("tryck på enter för att fortsätta");
-Console.ReadLine();
+   
+fel(ref score);
 
 }
 
@@ -301,34 +205,22 @@ Console.WriteLine($" Du har {score} poäng");
 Console.WriteLine("Vilket land är störst i världen?");
 Console.WriteLine("");
 Console.WriteLine(" a. USA");
-Console.WriteLine(" b. Ryssland");
+Console.WriteLine(" b. Ryssland");      //samma
 Console.WriteLine(" c. USA");
 Console.WriteLine(" d. Kanada");
 
-answer = Console.ReadLine();
+answer = Console.ReadLine() ?? string.Empty;
 
 if(answer.ToLower() == "b") {
 
-isAnswerCorrect8 = true;
-
-} if(isAnswerCorrect8 == true) {    
-    score++;
-    Console.WriteLine("Rätt svar!");
-    Console.WriteLine($"Du har {score} poäng");
-    Console.WriteLine("tryck på enter för att fortsätta");
-    Console.ReadLine();
+ 
+   rätt(ref score); }
 
 
-    }
+    
     else if(answer.ToLower() == "a" || answer.ToLower() == "c" || answer.ToLower() == "d") {
 
-    isAnswerCorrect8 = false;
-
-} if(isAnswerCorrect8 == false) {
-    Console.WriteLine("Fel svar!");
-    Console.WriteLine("tryck på enter för att fortsätta");
-    Console.ReadLine();
-
+      fel(ref score);
 
 }
 
@@ -340,33 +232,95 @@ Console.WriteLine("Vilket land har mest invånare");
 Console.WriteLine("");
 
 Console.WriteLine(" a. USA");
-Console.WriteLine(" b. Sverige");
+Console.WriteLine(" b. Sverige");     //samma
 Console.WriteLine(" c. Kina");
 Console.WriteLine(" d. Indien");
 
-answer = Console.ReadLine();
+answer = Console.ReadLine() ?? string.Empty;
 
 if(answer.ToLower() == "d") {
 
-isAnswercorrect9 = true;
 
-} if(isAnswercorrect9 == true) {
-    score++;
-    Console.WriteLine("Rätt svar!");
-    Console.WriteLine($"Du har {score} poäng");
-    Console.WriteLine("tryck enter för att fortsätta");
-    Console.ReadLine();
+   rätt(ref score); }
+
+else if(answer.ToLower() == "a" || answer.ToLower() == "b" || answer.ToLower() == "c") {
+ 
+    fel(ref score);
+}
+
+Console.Clear();
+Console.WriteLine($"Du har {score} poäng");
+
+Console.WriteLine("");
+Console.WriteLine("Detta är sista frågan! ");
+Console.WriteLine("");
+Console.WriteLine("Vilket lands population är gladast i hela världen?");
+Console.WriteLine("");
+
+Console.WriteLine(" a. USA");
+Console.WriteLine(" b. Sverige");     //samma
+Console.WriteLine(" c. Peru");
+Console.WriteLine(" d. Finland");
+
+answer = Console.ReadLine() ?? string.Empty;
+
+if(answer.ToLower() == "d") {
+
+    rätt(ref score);
 
 } else if(answer.ToLower() == "a" || answer.ToLower() == "b" || answer.ToLower() == "c") {
 
-    isAnswercorrect9 = false;
-
-} if(isAnswercorrect9 == false) {
-    Console.WriteLine("Fel svar!");
-    Console.WriteLine("tryck på enter för att fortsätta");
-    Console.ReadLine();
+    fel(ref score);
 
 }
 
+
+
+
+}
+Console.Clear();
+
+Console.WriteLine($"Ditt slutgiltiga poäng är: {score}"); //skriver ut slutgiltiga poängen
+Console.WriteLine("Dessa är kraven för de olika betygen du kan få:");
+Console.WriteLine("<=0 poäng = F");
+Console.WriteLine("0-3 poäng = E");
+Console.WriteLine("4-5 poäng = D");
+Console.WriteLine("5-6 poäng = C");               //skriver ut vilka poäng man behöver för olika betyg
+Console.WriteLine("7-8 poäng = B");
+Console.WriteLine("9-10 poäng = A");
+
+Console.WriteLine("tryck enter för att se ditt betyg");
+Console.ReadLine();
+Console.Clear();
+
+Console.WriteLine($"eftersom du fick {score} poäng så får du betyget:");         //skriver igen ut hur många betyg man fick
+
+if(score <= 0) {
+    Console.WriteLine("F");
+} else if(score >= 0 && score <= 3) {
+    Console.WriteLine("E");
+} else if(score >= 4 && score <= 5) {             // de olika alternativen för de olika mängden poäng man fick
+    Console.WriteLine("D");
+} else if(score >= 6 && score <= 7) {
+    Console.WriteLine("C");
+} else if(score >= 8 && score <= 9) {
+    Console.WriteLine("B");
+} else if(score == 10) {
+    Console.WriteLine("A");
+
+}
+
+Console.WriteLine("Vill du spela igen? (ja/nej)");
+
+string playAgain = Console.ReadLine() ?? string.Empty;      
+
+if(playAgain.ToLower() == "nej") {       // ifall spelaren skriver nej, stängs konsolen ner
+    break;
+} else if(playAgain.ToLower() == "ja") {
+    score = 0;
+    Console.Clear();          // om spelaren skriver ja så börjar spelet om genom att starta loopen från början och poängen blir 0
+    continue;
+
+}
 
 }
