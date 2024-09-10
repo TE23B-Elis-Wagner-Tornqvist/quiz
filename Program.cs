@@ -14,6 +14,9 @@ bool isAnswerCorrect8 = false;
 bool isAnswercorrect9 = false;
 
 
+string rätt = 
+
+
 while(true) {
 
 Console.WriteLine("Hej spelare! Välkommen till en frågesport!");
