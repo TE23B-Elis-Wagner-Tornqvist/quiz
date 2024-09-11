@@ -46,19 +46,11 @@ Console.WriteLine(" d. Brisbane");
 
 string answer = Console.ReadLine() ?? string.Empty;
 
-if(answer.ToLower() == "c") {       //ifall ma nskriver in c så är svaret rätt och min bool blir sann
+if(answer.ToLower() == "c") {       //ifall ma nskriver in c så är svaret rätt och det som är i if satsen körs
+    rätt(ref score);  // här skriver den allt som är i funktionen rätt
 
-     //om boolen är sann så körs funktionen rätt
-
-  rätt(ref score);  // här skriver den allt som är i funktionen rätt
-
-     
-    
-
-} else if(answer.ToLower() == "a" || answer.ToLower() == "b" || answer.ToLower() == "d") { //ifall man skriver in a,b eller d så är svaret fel och boolen blir falsk
-  // om boolen är falsk så körs funktionen fel
-
-    fel(ref score);      //skriver/gör allt som är i funktionen fel
+} else if(answer.ToLower() == "a" || answer.ToLower() == "b" || answer.ToLower() == "d") { //ifall man skriver in a,b eller d så är svaret fel och det som står i else if satsen körs
+     fel(ref score);      //skriver/gör allt som är i funktionen fel
 }
 
 Console.Clear();                              // clear console från förra frågan
@@ -74,11 +66,9 @@ Console.WriteLine(" d. san francisco");
 answer = Console.ReadLine() ?? string.Empty;
 
 if(answer.ToLower() == "b") {
-    
-    rätt(ref score);                                   // allt detta är samma som förra frågan
+     rätt(ref score);                                   // allt detta är samma som förra frågan
 
 } else if(answer.ToLower() == "a" || answer.ToLower() == "c" || answer.ToLower() == "d") {
-
     fel(ref score);
 
 }
@@ -97,13 +87,10 @@ Console.WriteLine(" d. Mount Everest");
 answer = Console.ReadLine() ?? string.Empty;
 
 if(answer.ToLower() == "d") {
-        
-        rätt(ref score);
+     rätt(ref score);
 
 } else if(answer.ToLower() == "a" || answer.ToLower() == "b" || answer.ToLower() == "c") {
-
-    fel(ref score);
-
+     fel(ref score);
 
 }
 Console.Clear();
@@ -119,10 +106,9 @@ Console.WriteLine(" d. asien");
 answer = Console.ReadLine() ?? string.Empty;
 
 if(answer.ToLower() == "c") {
-rätt(ref score);
+    rätt(ref score);
 
 } else if(answer.ToLower() == "a" || answer.ToLower() == "b" || answer.ToLower() == "d") {{
-
     fel(ref score);
 
 }
@@ -141,11 +127,10 @@ Console.WriteLine(" d. Australien");
 answer = Console.ReadLine() ?? string.Empty;
 
 if(answer == "a") {
-rätt(ref score);
-
+    rätt(ref score);
+    
 } else if(answer.ToLower() == "b" || answer.ToLower() == "c" || answer.ToLower() == "d") {
-
-    fel(ref score);
+     fel(ref score);
 
 }
 
@@ -164,13 +149,10 @@ Console.WriteLine(" d. 4");
 answer = Console.ReadLine() ?? string.Empty;
 
 if(answer == "a") {
-
-
-rätt(ref score);
+    rätt(ref score);
 
 } else if (answer.ToLower() == "b" || answer.ToLower() == "c" || answer.ToLower() == "d") {
-
- fel(ref score);
+    fel(ref score);
 
 }
 
@@ -189,13 +171,10 @@ Console.WriteLine(" d. jacksón");
 answer = Console.ReadLine() ?? string.Empty;
 
 if(answer == "b") {
-
-rätt(ref score);
+    rätt(ref score);
 
 } else if(answer.ToLower() == "b" || answer.ToLower() == "c" || answer.ToLower() == "d") {
-
-   
-fel(ref score);
+    fel(ref score);
 
 }
 
@@ -212,15 +191,10 @@ Console.WriteLine(" d. Kanada");
 answer = Console.ReadLine() ?? string.Empty;
 
 if(answer.ToLower() == "b") {
+    rätt(ref score); 
 
- 
-   rätt(ref score); }
-
-
-    
-    else if(answer.ToLower() == "a" || answer.ToLower() == "c" || answer.ToLower() == "d") {
-
-      fel(ref score);
+} else if(answer.ToLower() == "a" || answer.ToLower() == "c" || answer.ToLower() == "d") {
+     fel(ref score);
 
 }
 
@@ -239,13 +213,10 @@ Console.WriteLine(" d. Indien");
 answer = Console.ReadLine() ?? string.Empty;
 
 if(answer.ToLower() == "d") {
-
-
-   rätt(ref score); }
+ rätt(ref score); }
 
 else if(answer.ToLower() == "a" || answer.ToLower() == "b" || answer.ToLower() == "c") {
- 
-    fel(ref score);
+ fel(ref score);
 }
 
 Console.Clear();
@@ -273,9 +244,6 @@ if(answer.ToLower() == "d") {
     fel(ref score);
 
 }
-
-
-
 
 }
 Console.Clear();
@@ -311,6 +279,7 @@ if(score <= 0) {
 }
 
 Console.WriteLine("Vill du spela igen? (ja/nej)");
+
 
 string playAgain = Console.ReadLine() ?? string.Empty;      
 
