@@ -2,17 +2,43 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-void rätt(ref int score) {
+void rätt(ref int score) {                    //refererar till score så att jag kan ändra valutan av score
     score++;
+    Console.WriteLine("""
+   _____                         _   _ 
+  / ____|                       | | | |
+ | |     ___  _ __ _ __ ___  ___| |_| |
+ | |    / _ \| '__| '__/ _ \/ __| __| |
+ | |___| (_) | |  | | |  __/ (__| |_|_|
+  \_____\___/|_|  |_|  \___|\___|\__(_)
+                                       
+                                       
+""");
     Console.WriteLine("Rätt svar!");
     Console.WriteLine($"Du har {score} poäng");                      //en funktion så att jag slipper skriva samma kod om och omg igen. funktion om man svarar rätt
     Console.WriteLine("tryck enter för att fortsätta");         
     Console.ReadLine();
+
+
 }
 
 void fel(ref int score) {
 
 score--;
+
+Console.WriteLine("""
+
+ __          __                    _ 
+ \ \        / /                   | |
+  \ \  /\  / / __ ___  _ __   __ _| |
+   \ \/  \/ / '__/ _ \| '_ \ / _` | |
+    \  /\  /| | | (_) | | | | (_| |_|
+     \/  \/ |_|  \___/|_| |_|\__, (_)
+                              __/ |  
+                             |___/   
+
+""");
+
  Console.WriteLine("Fel svar!");
  Console.WriteLine($"Du har {score} poäng");                  //säger hur många poäng du har
     Console.WriteLine("tryck på enter för att fortsätta");         //också en funktion fast för om man svarar fel
@@ -20,9 +46,32 @@ score--;
 
 }
 
+string input() {
+
+while(true) {
+string input = Console.ReadLine().ToLower() ?? string.Empty;
+if(input.Length == 1 && "abcd".Contains(input)) {
+    return input;
+} else {
+
+    Console.WriteLine("Du måste skriva a,b,c eller d!");
+}
+
+    }
+
+
+}
+
+
+
+
+
 int score = 0; //poängen börjar på 0
 
 while(true) {     // så att koden loopas
+ 
+
+
 
 Console.WriteLine("Hej spelare! Välkommen till en frågesport!");
 Console.WriteLine("Du kommer att få 10 frågor och för varje rätt svar får du 1 poäng och för varje fel svar förlorar du 1 poäng");
@@ -44,11 +93,12 @@ Console.WriteLine(" b. sydney");
 Console.WriteLine(" c. canberra");       //alternativen
 Console.WriteLine(" d. Brisbane");
 
-string answer = Console.ReadLine() ?? string.Empty;
+string answer = input(); //s
 
 if(answer.ToLower() == "c") {       //ifall ma nskriver in c så är svaret rätt och det som är i if satsen körs
+   
     rätt(ref score);  // här skriver den allt som är i funktionen rätt
-
+    
 } else if(answer.ToLower() == "a" || answer.ToLower() == "b" || answer.ToLower() == "d") { //ifall man skriver in a,b eller d så är svaret fel och det som står i else if satsen körs
      fel(ref score);      //skriver/gör allt som är i funktionen fel
 }
@@ -63,7 +113,11 @@ Console.WriteLine(" b. Washington D.C");
 Console.WriteLine(" c. Los Angeles");
 Console.WriteLine(" d. san francisco");
 
-answer = Console.ReadLine() ?? string.Empty;
+answer = input();
+
+
+
+
 
 if(answer.ToLower() == "b") {
      rätt(ref score);                                   // allt detta är samma som förra frågan
@@ -84,7 +138,7 @@ Console.WriteLine(" b. Manaslu");            //samma som förra frågan
 Console.WriteLine(" c. K2");
 Console.WriteLine(" d. Mount Everest");
 
-answer = Console.ReadLine() ?? string.Empty;
+answer = input();
 
 if(answer.ToLower() == "d") {
      rätt(ref score);
@@ -103,7 +157,7 @@ Console.WriteLine(" b. afrika");                 //samma
 Console.WriteLine(" c. antarktis");
 Console.WriteLine(" d. asien");
 
-answer = Console.ReadLine() ?? string.Empty;
+answer = input();
 
 if(answer.ToLower() == "c") {
     rätt(ref score);
@@ -124,7 +178,7 @@ Console.WriteLine(" b. Norge");               //samma
 Console.WriteLine(" c. Indonesien");
 Console.WriteLine(" d. Australien");
 
-answer = Console.ReadLine() ?? string.Empty;
+answer = input();
 
 if(answer == "a") {
     rätt(ref score);
@@ -146,7 +200,7 @@ Console.WriteLine(" b. 6");   //samma
 Console.WriteLine(" c. 10");
 Console.WriteLine(" d. 4");
 
-answer = Console.ReadLine() ?? string.Empty;
+answer = input();
 
 if(answer == "a") {
     rätt(ref score);
@@ -168,7 +222,7 @@ Console.WriteLine(" b. Seine");
 Console.WriteLine(" c. Donau");
 Console.WriteLine(" d. jacksón");
 
-answer = Console.ReadLine() ?? string.Empty;
+answer = input();
 
 if(answer == "b") {
     rätt(ref score);
@@ -188,7 +242,7 @@ Console.WriteLine(" b. Ryssland");      //samma
 Console.WriteLine(" c. USA");
 Console.WriteLine(" d. Kanada");
 
-answer = Console.ReadLine() ?? string.Empty;
+answer = input();
 
 if(answer.ToLower() == "b") {
     rätt(ref score); 
@@ -210,7 +264,7 @@ Console.WriteLine(" b. Sverige");     //samma
 Console.WriteLine(" c. Kina");
 Console.WriteLine(" d. Indien");
 
-answer = Console.ReadLine() ?? string.Empty;
+answer = input();
 
 if(answer.ToLower() == "d") {
  rätt(ref score); }
@@ -233,7 +287,7 @@ Console.WriteLine(" b. Sverige");     //samma
 Console.WriteLine(" c. Peru");
 Console.WriteLine(" d. Finland");
 
-answer = Console.ReadLine() ?? string.Empty;
+answer = input();
 
 if(answer.ToLower() == "d") {
 
@@ -292,4 +346,13 @@ if(playAgain.ToLower() == "nej") {       // ifall spelaren skriver nej, stängs 
 
 }
 
+ 
+
 }
+
+
+
+
+
+
+
