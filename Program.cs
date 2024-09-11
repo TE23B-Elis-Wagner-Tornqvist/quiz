@@ -108,7 +108,7 @@ answer = Console.ReadLine() ?? string.Empty;
 if(answer.ToLower() == "c") {
     rätt(ref score);
 
-} else if(answer.ToLower() == "a" || answer.ToLower() == "b" || answer.ToLower() == "d") {{
+} else if(answer.ToLower() == "a" || answer.ToLower() == "b" || answer.ToLower() == "d") {
     fel(ref score);
 
 }
@@ -245,7 +245,7 @@ if(answer.ToLower() == "d") {
 
 }
 
-}
+
 Console.Clear();
 
 Console.WriteLine($"Ditt slutgiltiga poäng är: {score}"); //skriver ut slutgiltiga poängen
