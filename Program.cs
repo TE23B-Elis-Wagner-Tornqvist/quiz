@@ -49,12 +49,12 @@ Console.WriteLine("""
 string input() {
 
 while(true) {
-string input = Console.ReadLine().ToLower() ?? string.Empty;
-if(input.Length == 1 && "abcd".Contains(input)) {
-    return input;
+string input = Console.ReadLine().ToLower() ?? string.Empty;   // en ny stings som heter input 
+if(input.Length == 1 && "abcd".Contains(input)) {                    // en if sats som kollar om input är endast en bokstav och om det är a,b,c eller d
+    return input;      // om den gör det returnar den input och min while loop bryts
 } else {
 
-    Console.WriteLine("Du måste skriva a,b,c eller d!");
+    Console.WriteLine("Du måste skriva a,b,c eller d!");    // annars säger den till player att skriva a,b,c eller d
 }
 
     }
@@ -93,7 +93,7 @@ Console.WriteLine(" b. sydney");
 Console.WriteLine(" c. canberra");       //alternativen
 Console.WriteLine(" d. Brisbane");
 
-string answer = input(); //s
+string answer = input(); //referar till input funktionen och gör det som står där
 
 if(answer.ToLower() == "c") {       //ifall ma nskriver in c så är svaret rätt och det som är i if satsen körs
    
